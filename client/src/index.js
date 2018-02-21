@@ -6,4 +6,8 @@ socket.on('connect', (s) => {
     console.log('connected to the socket', s);
 });
 
+setInterval(() => {
+    socket.emit('chat message', Math.random());
+}, 1000)
+
 // console.log('testing')

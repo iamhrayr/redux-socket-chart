@@ -13,7 +13,10 @@ app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 
 // Socket.io
 io.on('connection', function(socket){
-    console.log('a user connected', socket);
+    // console.log('a user connected', socket);
+    socket.on('chat message', function(msg){
+        console.log('message: ' + msg);
+    });
 });
 
 // // Run the server listener
