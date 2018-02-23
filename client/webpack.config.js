@@ -16,6 +16,7 @@ module.exports = {
     devServer: {
         port: 3000,
     },
+    devtool: 'source-maps',
     module: {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
