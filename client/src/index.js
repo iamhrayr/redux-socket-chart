@@ -7,8 +7,10 @@ import reducer from './reducers';
 import thunk from 'redux-thunk';
 
 const socketIoMiddleware = state => next => action => {
-    console.log(store.getState())
     next(action);
+    if (action.type == 'CHANGE_VIEW') {
+        
+    }
 }
 
 const store = createStore(

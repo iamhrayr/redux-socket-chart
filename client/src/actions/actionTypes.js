@@ -2,6 +2,9 @@ export const CHANGE_VIEW = 'CHANGE_VIEW';
 // export const SET_COORDINATES = 'SET_COORDINATES';
 // export const ADD_POINT = 'ADD_POINT';
 
+export const CONNECT_SOCKET = 'CONNECT_SOCKET';
+export const DISCONNECT_SOCKET = 'DISCONNECT_SOCKET';
+
 
 
 

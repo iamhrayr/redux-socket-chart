@@ -2,6 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 
 export default function(state=[], action){
     switch (action.type) {
+        case actionTypes.GET_CHARTS_SUCCESS: 
+            return action.payload;
         case actionTypes.CHANGE_VIEW:
             return [
                 ...state.slice(0,action.id),
@@ -11,8 +13,6 @@ export default function(state=[], action){
                 },
                 ...state.slice(action.id+1),
             ]
-        case actionTypes.GET_CHARTS_SUCCESS: 
-            return action.payload;
         default: 
             return state
     }

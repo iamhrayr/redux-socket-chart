@@ -2,12 +2,20 @@ import React, {Component} from 'react';
 import Highcharts from 'highcharts';
 import {connect} from 'react-redux';
 import {changeView} from '../actions/charts';
+import {connectSocket} from '../actions/socket';
 
 
 class Chart extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            chartLiveView: false
+        }
+    }
+
     componentDidMount(){
-        this.renderChart()
+        this.renderChart();
     }
 
     renderChart(){
@@ -28,7 +36,7 @@ class Chart extends Component {
     }
 
     render(){
-        let buttonText = this.props.data.live ? 'back to static' : 'Change to live';
+        let buttonText = this.state.chartLiveView ? 'back to static' : 'Change to live';
         return (
             <div className='chart-wrapper'>
                 <button onClick={this.changeView.bind(this)}>{buttonText}</button>
@@ -38,4 +46,4 @@ class Chart extends Component {
     }
 }
 
-export default connect(null, {changeView})(Chart);
+export default connect(null, {changeView, connectSocket})(Chart);
